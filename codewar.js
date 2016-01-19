@@ -79,3 +79,29 @@ var findMissing = function (list) {
   var step = (list[list.length - 1] - list[0]) / (list.length);
   return list.filter(function(val, index) { return val !== (list[0] + index * step); })[0] - step;
 }
+
+//Valid Braces
+//mine
+function validBraces(braces){
+  //TODO
+  var arr = [];
+  for(var i = 0; i < braces.length; i++){
+    if(braces[i] == '('){
+      arr.push(')');
+    }else if(braces[i] == '['){
+      arr.push(']');
+    }else if(braces[i] == '{'){
+      arr.push('}');
+    }else{
+      if(arr.pop() != braces[i]){
+        return false;
+      }
+    }
+  }
+
+  if(arr.length){
+    return false;
+  }
+
+  return true;
+}
