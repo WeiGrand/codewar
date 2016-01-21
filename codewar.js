@@ -98,7 +98,6 @@ function validBraces(braces){
       }
     }
   }
-
   if(arr.length){
     return false;
   }
